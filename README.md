@@ -22,3 +22,12 @@
    git checkout master
    git pull origin master
    git checkout -b feature/DVT-X
+
+## Правила работы с Git
+
+### Перед push: git status clean
+**Обязательное правило:** Перед выполнением `git push` убедитесь, что рабочая область чиста.
+
+**Как проверить:**
+```bash
+git status
