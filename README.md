@@ -29,15 +29,31 @@
 
 **Примеры:**
 - `feature/DVT-3` — разработка новой функциональности для задачи DVT-3
-- `feature/DVT-5` — разработка для задачи DVT-5
-- `bugfix/DVT-7` — исправление бага в задаче DVT-7
-- `hotfix/urgent-issue` — срочное исправление в production
+- `feature/DVT-5` — разработка для задачи DVT-4
+
+
 
 ### Процесс работы
 1. Создайте ветку от `master`: `git checkout -b feature/DVT-3`
 2. Регулярно делайте коммиты с понятными сообщениями
 3. После завершения работы создайте Pull Request (Merge Request)
 4. После код-ревью ветка мержится в `master`
+
+## Git локальный цикл
+1. Проверить статус
+   git status
+2. Добавить изменения
+   git add <файлы>
+3. Сделать коммит
+   git commit -m "Сообщение"
+4. git log --oneline
+5.  Создать/переключить ветку
+    git checkout -b feature/DVT-X
+    git checkout master
+
+
+
+
 
 ## Описание пакета
 
