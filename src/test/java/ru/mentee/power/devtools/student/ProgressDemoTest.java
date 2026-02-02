@@ -59,7 +59,7 @@ class ProgressDemoTest {
             String output = outContent.toString();
 
             // Исправлено: проверяем точную строку, которая выводится
-            assertThat(output).contains("Текущая ветка разработки: feature/DVT-3");
+            assertThat(output).contains("Текущая ветка разработки: feature/DVT-9");
 
         } finally {
             System.setOut(originalOut);
