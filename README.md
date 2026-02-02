@@ -13,6 +13,11 @@
 2. Дважды щёлкните **test**.
 3. Или через **Run Anything**:
 
+# CI/CD: GitHub Actions configured successfully
+# DevTools Course
+
+![Java CI](https://github.com/IsmailCR7/devtools/actions/workflows/ci.yml/badge.svg)
+
 ---
 ## Правила работы с ветками
 
@@ -125,10 +130,10 @@ Active development branch for DVT-4 task
 
 ### Команды для проверки:
 bash
-git check-ignore -v .DS_Store
-git check-ignore -v .idea/workspace.xml
-git status
-git diff --name-status HEAD~1..HEAD
+1. `git check-ignore -v .DS_Store`
+2. `git check-ignore -v .idea/workspace.xml`
+3. `git status`
+4. `git diff --name-status HEAD~1..HEAD`
 
 ## Сценарий ручной проверки DVT-6
 
@@ -201,7 +206,7 @@ git diff --name-status HEAD~1..HEAD
 Почему: скобки обязательны даже для однострочных блоков.
 Источник: https://google.github.io/styleguide/javaguide.html#s4.1.1-braces-always-used
 
-### 6. CI/CD: GitHub Actions configured successfully
+
 
 ## Code Review Checklist
 
@@ -273,3 +278,30 @@ git diff --name-status HEAD~1..HEAD
 
 **Почему плохо:** Нет объяснения почему лучше, нет примера как переписать,
 неясно какую проблему это решает.
+
+## Результаты само-ревью DVT-9
+
+### Найденные проблемы
+
+#### 1. Отсутствие CI badge в README
+**Файл:** README.md (начало файла)
+**Проблема:** Нет бейджа статуса сборки GitHub Actions
+**Почему важно:** CI badge показывает статус проекта сразу при открытии README —
+это стандарт для open-source проектов и упрощает мониторинг состояния сборки.
+**Исправление:** Добавить бейдж в начало README:
+
+![CI](https://github.com/IsmailCR7/devtools/actions/workflows/ci.yml/badge.svg)
+
+
+
+#### 2. Забыт неактуальный вывод
+**Файл:** src/main/java/ru/mentee/power/devtools/ProgressDemo.java (строка 18)
+**Проблема:** Оставлен `System.out.println("Текущая ветка разработки: feature/DVT-3")`
+**Почему важно:** Отладочный вывод замусоривает логи production-приложения и создаёт впечатление небрежности.
+**Исправление:** Исправлен вывод текста на актуальную ветку `System.out.println("Текущая ветка разработки: feature/DVT-9")`.
+
+#### 3. Не правильное наименование проекта
+**Файл:** src/main/java/ru/mentee/power/newDevtools/
+**Проблема:** Проект должен называть "devtools", а фактически "newDevtools"
+**Почему важно:** Создаёт путаницу и не проходит проверку SonarQube.
+**Исправление:** Переименовал проект локально и на GitHub, закоммитил и запушил изменения.
